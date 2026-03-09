@@ -61,14 +61,19 @@ def predict():
         # Extract features from form input
         # Features: Age, Gender, BMI, Systolic, Diastolic, Smoking
         # Note: Gender and Smoking should be encoded as 0/1 in the frontend
-        features = [
-            float(request.form['age']),
-            float(request.form['gender']),
-            float(request.form['bmi']),
-            float(request.form['systolic']),
-            float(request.form['diastolic']),
-            float(request.form['smoking'])
-        ]
+        features = [[
+            int(request.form['Age']),
+            str(request.form['History']),
+            str(request.form['Patient']),
+            str(request.form['TakeMedication']),
+            str(request.form['Severity']),
+            str(request.form['BreathShortness']),
+            str(request.form['VisualChanges']),
+            str(request.form['NoseBleeding']),
+            int(request.form['Whendiagnoused']),
+            int(request.form['Systolic']),
+            int(request.form['Diastolic']),
+            str(request.form['ControlledDiet'])]]
         
         # Prepare input for model
         final_features = [np.array(features)]
