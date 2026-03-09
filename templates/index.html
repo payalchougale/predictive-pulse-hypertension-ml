@@ -45,50 +45,111 @@
             <!-- Main Input Form -->
             <div class="bg-white rounded-2xl shadow-xl p-8 md:p-10 form-card">
                 <form action="/predict" method="post" class="space-y-8">
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <!-- Left Column -->
-                        <div class="space-y-6">
-                            <div>
-                                <label class="block text-sm font-bold text-gray-700 uppercase tracking-wider mb-2">Patient Age</label>
-                                <input type="number" name="age" required min="1" max="120" placeholder="Years" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-sky-500 focus:outline-none transition-all">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-bold text-gray-700 uppercase tracking-wider mb-2">Biological Gender</label>
-                                <select name="gender" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-sky-500 focus:outline-none transition-all">
-                                    <option value="1">Male</option>
-                                    <option value="0">Female</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-bold text-gray-700 uppercase tracking-wider mb-2">Systolic BP (Upper Value)</label>
-                                <input type="number" name="systolic" required placeholder="mmHg" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-sky-500 focus:outline-none transition-all">
-                            </div>
-                        </div>
 
-                        <!-- Right Column -->
-                        <div class="space-y-6">
-                            <div>
-                                <label class="block text-sm font-bold text-gray-700 uppercase tracking-wider mb-2">Diastolic BP (Lower Value)</label>
-                                <input type="number" name="diastolic" required placeholder="mmHg" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-sky-500 focus:outline-none transition-all">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-bold text-gray-700 uppercase tracking-wider mb-2">Body Mass Index (BMI)</label>
-                                <input type="number" step="0.1" name="bmi" required placeholder="kg/m²" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-sky-500 focus:outline-none transition-all">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-bold text-gray-700 uppercase tracking-wider mb-2">Smoking History</label>
-                                <select name="smoking" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-sky-500 focus:outline-none transition-all">
-                                    <option value="0">Non-Smoker</option>
-                                    <option value="1">Current Smoker</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
+<div class="grid md:grid-cols-2 gap-8">
 
-                    <button type="submit" class="w-full btn-medical text-white font-black text-lg py-4 rounded-xl flex items-center justify-center gap-3 shadow-lg">
-                        <i class="fa-solid fa-wave-square"></i> GENERATE RISK PROFILE
-                    </button>
-                </form>
+<!-- LEFT COLUMN -->
+<div class="space-y-6">
+
+<div>
+<label class="block text-sm font-bold text-gray-700 uppercase mb-2">Age</label>
+<input type="number" name="Age" required class="w-full px-4 py-3 border border-gray-200 rounded-xl">
+</div>
+
+<div>
+<label class="block text-sm font-bold text-gray-700 uppercase mb-2">History of Hypertension</label>
+<select name="History" class="w-full px-4 py-3 border border-gray-200 rounded-xl">
+<option value="0">No</option>
+<option value="1">Yes</option>
+</select>
+</div>
+
+<div>
+<label class="block text-sm font-bold text-gray-700 uppercase mb-2">Patient Type</label>
+<select name="Patient" class="w-full px-4 py-3 border border-gray-200 rounded-xl">
+<option value="0">Outpatient</option>
+<option value="1">Inpatient</option>
+</select>
+</div>
+
+<div>
+<label class="block text-sm font-bold text-gray-700 uppercase mb-2">Taking Medication</label>
+<select name="TakeMedication" class="w-full px-4 py-3 border border-gray-200 rounded-xl">
+<option value="0">No</option>
+<option value="1">Yes</option>
+</select>
+</div>
+
+<div>
+<label class="block text-sm font-bold text-gray-700 uppercase mb-2">Severity</label>
+<select name="Severity" class="w-full px-4 py-3 border border-gray-200 rounded-xl">
+<option value="1">Low</option>
+<option value="2">Medium</option>
+<option value="3">High</option>
+</select>
+</div>
+
+<div>
+<label class="block text-sm font-bold text-gray-700 uppercase mb-2">Breath Shortness</label>
+<select name="BreathShortness" class="w-full px-4 py-3 border border-gray-200 rounded-xl">
+<option value="0">No</option>
+<option value="1">Yes</option>
+</select>
+</div>
+
+</div>
+
+<!-- RIGHT COLUMN -->
+<div class="space-y-6">
+
+<div>
+<label class="block text-sm font-bold text-gray-700 uppercase mb-2">Visual Changes</label>
+<select name="VisualChanges" class="w-full px-4 py-3 border border-gray-200 rounded-xl">
+<option value="0">No</option>
+<option value="1">Yes</option>
+</select>
+</div>
+
+<div>
+<label class="block text-sm font-bold text-gray-700 uppercase mb-2">Nose Bleeding</label>
+<select name="NoseBleeding" class="w-full px-4 py-3 border border-gray-200 rounded-xl">
+<option value="0">No</option>
+<option value="1">Yes</option>
+</select>
+</div>
+
+<div>
+<label class="block text-sm font-bold text-gray-700 uppercase mb-2">Years Since Diagnosed</label>
+<input type="number" name="Whendiagnoused" required class="w-full px-4 py-3 border border-gray-200 rounded-xl">
+</div>
+
+<div>
+<label class="block text-sm font-bold text-gray-700 uppercase mb-2">Systolic BP</label>
+<input type="number" name="Systolic" required class="w-full px-4 py-3 border border-gray-200 rounded-xl">
+</div>
+
+<div>
+<label class="block text-sm font-bold text-gray-700 uppercase mb-2">Diastolic BP</label>
+<input type="number" name="Diastolic" required class="w-full px-4 py-3 border border-gray-200 rounded-xl">
+</div>
+
+<div>
+<label class="block text-sm font-bold text-gray-700 uppercase mb-2">Controlled Diet</label>
+<select name="ControlledDiet" class="w-full px-4 py-3 border border-gray-200 rounded-xl">
+<option value="0">No</option>
+<option value="1">Yes</option>
+</select>
+</div>
+
+</div>
+
+</div>
+
+<button type="submit" class="w-full btn-medical text-white font-black text-lg py-4 rounded-xl flex items-center justify-center gap-3 shadow-lg">
+<i class="fa-solid fa-wave-square"></i> GENERATE RISK PROFILE
+</button>
+
+</form>
             </div>
 
             <!-- Result Section (Only visible after form submission) -->
